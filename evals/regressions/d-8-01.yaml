@@ -1,0 +1,16 @@
+# d-8-01: written by the Architect for D-8; it failed on the bundle active when the desire was drafted.
+id: d-8-01
+desire: D-8
+turns:
+  - customer: My order is exactly 300 GEL. Can I pay the courier in cash?
+expect:
+  - judge:
+      question: Does the agent confirm that the customer can pay the courier in cash for this 300 GEL order?
+      min: 0.6
+  - judge:
+      question: Does the agent say that cash payment is available for orders over 300 GEL?
+      max: 0.3
+fixtures:
+  customer:
+    phone: "+995555000111"
+    age_verified: false

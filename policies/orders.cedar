@@ -12,3 +12,7 @@ when { context.input.discount_pct > 10 };
 forbid (principal is Agent, action == Action::"order.create", resource)
 when { context.quote.total > 30000 }                 // 300.00 GEL, in tetri
 unless { context.approvals.contains("staff") };
+
+@id("order.cash_payment_limit")
+forbid (principal is Agent, action == Action::"order.create", resource)
+when { context.input.payment == "cash_on_delivery" && context.quote.total > 30000 };

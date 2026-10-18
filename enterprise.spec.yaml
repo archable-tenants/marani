@@ -69,12 +69,13 @@ objects:
         label: { en: order total, ka: შეკვეთის ჯამი }   # labels are copy (Q7): what cards and summaries call a node
       payment:
         type: enum
-        values: [card_link, bank_transfer]
+        values: [card_link, bank_transfer, cash_on_delivery]
         default: card_link
         label: { en: payment method, ka: გადახდის მეთოდი }
         value_labels:
           card_link: { en: card payment link, ka: ბარათით გადახდის ბმული }
           bank_transfer: { en: bank transfer, ka: საბანკო გადარიცხვა }
+          cash_on_delivery: { en: cash to courier }
       delivery: { type: enum, values: [standard, express], default: standard }
       status: { type: enum, values: [draft, awaiting_staff, confirmed, dispatched, delivered, cancelled], default: draft }
   delivery_job:
